@@ -1,16 +1,13 @@
 plugins {
     // Needed for Forge+Fabric
     id "architectury-plugin" version "3.4-SNAPSHOT"
-    id "dev.architectury.loom" version "0.12.0-SNAPSHOT" apply false
+    id "dev.architectury.loom" version "1.1-SNAPSHOT" apply false
     // Kotlin
     id "org.jetbrains.kotlin.jvm" version "1.7.21" apply false
     // Kotlin linter
     id "org.jlleitschuh.gradle.ktlint" version "10.3.0"
     // Java linter
     id "checkstyle"
-
-    id 'com.matthewprenger.cursegradle' version '1.4.0' apply false
-    id "com.modrinth.minotaur" version "2.4.5" apply false
 }
 
 // Determine the version
@@ -20,7 +17,7 @@ if (project.hasProperty("CustomReleaseVersion")) {
 } else {
     String gitRevision = "git rev-parse HEAD".execute().text.trim()
 
-    version = eureka_version + '+' + gitRevision.substring(0, 10)
+    version = mod_version + "-" + minecraft_version + '+' + gitRevision.substring(0, 10)
 }
 
 architectury {
@@ -97,13 +94,7 @@ allprojects {
         mavenLocal()
         maven {
             name = "Valkyrien Skies Internal"
-            url = project.vs_maven_url ?: 'https://maven.valkyrienskies.org'
-            if (project.vs_maven_username && project.vs_maven_password) {
-                credentials {
-                    username = project.vs_maven_username
-                    password = project.vs_maven_password
-                }
-            }
+            url = 'https://maven.valkyrienskies.org'
         }
     }
 

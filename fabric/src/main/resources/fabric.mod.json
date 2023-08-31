@@ -1,43 +1,33 @@
 {
   "schemaVersion": 1,
-  "id": "vs_eureka",
+  "id": "open_waters",
   "version": "${version}",
-  "name": "VS Eureka Mod",
-  "description": "Basically Archimedes Ships, but with VS2 as the backend!",
+  "name": "Open Waters",
+  "description": "A VS2 Addon for Sailing!",
   "authors": [
-    "ewoudje",
-    "Tri0de",
-    "Rubydesic"
-  ],
-  "contributors": [
-    "Copper",
-    "Anarava",
-    "VS Discord"
+    "TechTastic"
   ],
   "contact": {
     "homepage": "https://valkyrienskies.org/",
     "sources": "https://github.com/ValkyrienSkies/Eureka"
   },
-  "license": "Apache-2.0",
-  "icon": "assets/vs_eureka/icon.png",
+  "license": "MIT License",
+  "icon": "assets/open_waters/icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [
-      "org.valkyrienskies.eureka.fabric.EurekaModFabric"
+      "io.github.techtastic.open_waters.fabric.OpenWatersModFabric"
     ],
     "client": [
-      "org.valkyrienskies.eureka.fabric.EurekaModFabric${'$'}Client"
+      "io.github.techtastic.open_waters.fabric.OpenWatersModFabric"
     ],
     "preLaunch": [
-      "org.valkyrienskies.eureka.fabric.ValkyrienPreLaunch"
-    ],
-    "modmenu": [
-      "org.valkyrienskies.eureka.fabric.EurekaModFabric${'$'}ModMenu"
+      "io.github.techtastic.open_waters.fabric.ValkyrienPreLaunch"
     ]
   },
   "mixins": [
-    "vs_eureka-common.mixins.json",
-    "vs_eureka.mixins.json"
+    "open_waters-common.mixins.json",
+    "open_waters.mixins.json"
   ],
   "depends": {
     "minecraft": ">=1.18.2",
